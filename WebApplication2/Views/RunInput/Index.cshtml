@@ -1,0 +1,46 @@
+﻿@using System.Drawing
+@using Microsoft.Win32.SafeHandles
+@using WebApplication2.Models
+@model WebApplication2.Models.RunInput
+@{
+    ViewBag.Title = "Input Run Details";
+}
+
+<h2>Input Run Details</h2>
+
+<hr />
+@using (@Html.BeginForm("Create", "RunInput"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, "{0:d MMM yyyy}", new { @class = "form-control" })
+        
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Distance)
+        @Html.TextBoxFor(m => m.Distance, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Distance)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Time)
+        @Html.TextBoxFor(m => m.Time, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Calories)
+        @Html.TextBoxFor(m => m.Calories, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.HeartRate)
+        @Html.TextBoxFor(m => m.HeartRate, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <hr />
+    <img src="http://blogs.ewb.ca/r2ep/files/2013/03/logo.jpg "width="600" height="300" alt="" />
+
+}
+
